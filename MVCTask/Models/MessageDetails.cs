@@ -24,7 +24,8 @@ namespace MVCTask.Models
         [StringLength(160, ErrorMessage = "Max 120 characters allowed")]
         [MinLength(20, ErrorMessage = "Min 20 characters allowed")]
         [Display(Name = "Message")]
-        [RegularExpression(@"([a-z]|[A-Z]|[0-9]|[ ]|[-]|[_])*$", ErrorMessage = "special characters are not allowed.")]
+        [RegularExpression("([a-z]|[A-Z]|[0-9]|[ ]|[,.></?\"'}{|]|[=+-_)(*^!;:]|^@)*$", ErrorMessage = "special characters are not allowed.")]
+        //[RegularExpression(@"([a-z]|[A-Z]|[\-.,()*?/;:'\s][0-9])*$", ErrorMessage = "special characters are not allowed.")]
         public string Message { get; set; }
 
         [DataType(DataType.Time)]

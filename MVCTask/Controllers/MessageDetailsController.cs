@@ -92,6 +92,12 @@ namespace MVCTask.Controllers
             return View(messageDetails);
         }
 
+        public FileResult Downloads(int? id)
+        {
+            MessageDetails msgDetail = db.msgDetails.Where(i => i.MsgID == id).FirstOrDefault();
+            return File("\\App_Data\\" +msgDetail.File, "application/vnd.ms-excel");
+        }
+
         // GET: MessageDetails/Edit/5
         public ActionResult Edit(int? id)
         {

@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("New Message", "Create")
 </p>
 <table class="table">
     <tr>
@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.File)
+            @Html.ActionLink(item.File.ToString(), "Downloads", new { id = item.MsgID })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Message)
